@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Solution Page</title>
+    <style>
+        body { font-family: Arial, sans-serif; text-align: center; margin: 20px; }
+        .chapter-selection, .fragment-selection { margin-bottom: 20px; }
+        .fragment-dropdown { display: block; margin: 10px auto; }
+        .fragment-dropdown img { width: 100px; height: auto; }
+        .hidden { display: none; }
+    </style>
+</head>
+<body>
+
+    <h1>Select a Chapter to Solve</h1>
+
+    <div class="chapter-selection">
+        <button onclick="selectChapter(1)">Chapter 1</button>
+        <button onclick="selectChapter(2)">Chapter 2</button>
+        <button onclick="selectChapter(3)">Chapter 3</button>
+    </div>
+
+    <div id="fragment-container" class="hidden">
+        <h2>Arrange the fragments in correct order</h2>
+        <div class="fragment-selection">
+            <select class="fragment-dropdown" id="fragment1"></select>
+            <select class="fragment-dropdown" id="fragment2"></select>
+            <select class="fragment-dropdown" id="fragment3"></select>
+        </div>
+        <button onclick="checkSolution()">Submit</button>
+        <p id="result"></p>
+    </div>
+
+    <script>
+        const fragments = {
+            1: ["frag1-1.jpg", "frag1-2.jpg", "frag1-3.jpg"], 
+            2: ["frag2-1.jpg", "frag2-2.jpg", "frag2-3.jpg"], 
+            3: ["frag3-1.jpg", "frag3-2.jpg", "frag3-3.jpg"] 
+        };
+
+        let selectedChapter = null;
+
+        function selectChapter(chapter) {
+            selectedChapter = chapter;
+            document.getElementById("fragment-container").classList.remove("hidden");
+
+            let dropdowns = ["fragment1", "fragment2", "fragment3"];
+            dropdowns.forEach((id, index) => {
+                let select = document.getElementById(id);
+                select.innerHTML = ""; 
+
+                fragments[chapter].forEach(frag => {
+                    let option = document.createElement("option");
+                    option.value = frag;
+                    option.innerHTML = `<img src="${frag}" width="50"> ${frag}`;
+                    select.appendChild(option);
+                });
+
+                select.selectedIndex = index;
+            });
+        }
+
+        function checkSolution() {
+            if (!selectedChapter) return;
+
+            let userSelection = [
+                document.getElementById("fragment1").value,
+                document.getElementById("fragment2").value,
+                document.getElementById("fragment3").value
+            ];
+
+            let correctOrder = fragments[selectedChapter];
+
+            if (JSON.stringify(userSelection) === JSON.stringify(correctOrder)) {
+                document.getElementById("result").innerText = "Correct! Chapter Solved!";
+            } else {
+                document.getElementById("result").innerText = "Incorrect. Try again!";
+            }
+        }
+    </script>
+
+</body>
+</html>
