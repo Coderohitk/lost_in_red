@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost in Red - Chapter Puzzle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lost in Red</h1>
+            <h2 id="chapterTitle">CHAPTER 1</h2>
+            <button id="backButton">Back to Chapters</button>
+        </header>
+        
+        <main>
+            <div class="clue-container">
+                <div class="clue-image" id="clueImage"></div>
+                <p class="clue-description" id="clueDescription"></p>
+            </div>
+            
+            <div class="puzzle-container">
+                <div class="fragments-container">
+                    <h3>Available Fragments</h3>
+                    <div class="fragments-list" id="availableFragments">
+                        <!-- Fragments will be added dynamically -->
+                    </div>
+                </div>
+                
+                <div class="solution-container">
+                    <h3>Solution Sequence</h3>
+                    <div class="solution-slots" id="solutionSlots">
+                        <div class="solution-slot" data-slot="1"></div>
+                        <div class="solution-slot" data-slot="2"></div>
+                        <div class="solution-slot" data-slot="3"></div>
+                    </div>
+                    <button id="checkSolution">Check Solution</button>
+                    <button id="playChapter" disabled>Play Full Chapter</button>
+                    <button id="resetPuzzle">Reset Puzzle</button>
+                </div>
+            </div>
+            
+            <div class="audio-controls hidden" id="audioControls">
+                <button id="playPauseBtn">⏵</button>
+                <button id="stopBtn">⏹</button>
+                <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+                <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+            </div>
+            
+            <div class="feedback hidden" id="feedback"></div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

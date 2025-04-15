@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost in Red - Main Menu</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lost in Red</h1>
+            <p class="subtitle">RBD 151 - Interdisciplinary Activity</p>
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar"></div>
+                <span id="progressText">0% Complete</span>
+            </div>
+        </header>
+        
+        <main>
+            <div class="intro-text">
+                <p>It's been days since the research vessel Savior landed on Mars' space station... With the purpose to find a suitable place on a planet humans would soon call... home.</p>
+                <p>But it has been days since Captain Layne Malley, the only crew member who was awake, vanished from radars, along with the rest of the crew still in cryogenic sleep.</p>
+                <p>As an Integrated Communications Officer, your mission is clear: analyse the recordings, piece it together... and report the mysterious events aboard the Savior.</p>
+            </div>
+            
+            <div class="chapters-container">
+                <div class="chapter" id="chapter1" data-chapter="1">
+                    <div class="chapter-image" style="background-image: url('images/chapters/chapter1.jpg');"></div>
+                    <h2>CHAPTER 1</h2>
+                    <div class="status" id="status1">Unsolved</div>
+                </div>
+                
+                <div class="chapter" id="chapter2" data-chapter="2">
+                    <div class="chapter-image" style="background-image: url('images/chapters/chapter2.jpg');"></div>
+                    <h2>CHAPTER 2</h2>
+                    <div class="status" id="status2">Unsolved</div>
+                </div>
+                
+                <div class="chapter" id="chapter3" data-chapter="3">
+                    <div class="chapter-image" style="background-image: url('images/chapters/chapter3.jpg');"></div>
+                    <h2>CHAPTER 3</h2>
+                    <div class="status" id="status3">Unsolved</div>
+                </div>
+            </div>
+            
+            <div class="final-puzzle-container hidden" id="finalPuzzleContainer">
+                <button id="solveFinalPuzzle">Solve Final Puzzle</button>
+            </div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>

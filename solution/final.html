@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost in Red - Final Puzzle</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Lost in Red</h1>
+            <h2>Final Puzzle</h2>
+            <button id="backButtonFinal">Back to Chapters</button>
+        </header>
+        
+        <main>
+            <div class="final-instructions">
+                <p>Now that you've solved all chapters, arrange them in the correct chronological order to reveal the full story.</p>
+            </div>
+            
+            <div class="final-puzzle">
+                <div class="chapters-list" id="availableChapters">
+                    <!-- Chapters will be added dynamically -->
+                </div>
+                
+                <div class="final-solution-container">
+                    <h3>Final Sequence</h3>
+                    <div class="final-solution-slots" id="finalSolutionSlots">
+                        <div class="final-solution-slot" data-slot="1"></div>
+                        <div class="final-solution-slot" data-slot="2"></div>
+                        <div class="final-solution-slot" data-slot="3"></div>
+                    </div>
+                    <button id="checkFinalSolution">Check Solution</button>
+                    <button id="playFullStory" disabled>Play Full Story</button>
+                    <button id="resetFinalPuzzle">Reset Puzzle</button>
+                </div>
+            </div>
+            
+            <div class="audio-controls hidden" id="audioControls">
+                <button id="playPauseBtn">⏵</button>
+                <button id="stopBtn">⏹</button>
+                <input type="range" id="volumeControl" min="0" max="1" step="0.1" value="1">
+                <span id="currentTime">0:00</span> / <span id="totalTime">0:00</span>
+            </div>
+            
+            <div class="feedback hidden" id="finalFeedback"></div>
+        </main>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
